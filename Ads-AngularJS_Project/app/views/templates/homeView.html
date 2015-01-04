@@ -1,15 +1,20 @@
-<div class="jumbotron" data-ng-controller="HomeController">
-    <h1>User ads</h1>
-    <ul>
-        <li ng-repeat="ad in data.ads" class="well">
-            <a href="#/ads/{{ad.id}}">
-                <h1>{{ad.title}}</h1>
+<div class="col-md-8 jumbotron allAds" data-ng-controller="HomeController">
 
-                <div><strong>Text:</strong> {{ad.text}}</div>
-                <div><strong>Town:</strong> {{ad.townName}}</div>
-                <div><strong>Category:</strong> {{ad.categoryName}}</div>
-                <div><strong>Status:</strong> {{ad.status}}</div>
-            </a>
-        </li>
-    </ul>
+    <h3>User ads</h3>
+
+    <div ng-repeat="ad in data.ads" class="well row adContainer">
+        <a href="#/ads/{{ad.id}}">
+            <h3>{{ad.title}}</h3>
+            <img src="" class="img-thumbnail col-md-5" ng-src="{{ad.imageDataUrl}}">
+
+            <div class="well col-md-7">
+                <div class="well-sm "><strong>Text:</strong> {{ad.text}}</div>
+                <div class=" well-sm"><strong>Name:</strong> {{ad.ownerName}}</div>
+                <div class="well-sm"><strong>Email:</strong> {{ad.ownerEmail}}</div>
+                <div class="well-sm"><strong>Tel.</strong> {{ad.ownerPhone}}</div>
+            </div>
+
+        </a>
+    </div>
 </div>
+

@@ -1,3 +1,54 @@
 body {
     padding-top: 70px;
+    background-color: #ccdaff;
+}
+
+.well {
+    background-color: #31708f;
+    color: rgba(47, 30, 5, 0.95);
+}
+
+ul.nav-stacked li:hover a {
+    background-color: #aff3ff;
+    color: #110aff;
+    font-weight: bold;
+
+}
+
+.nav-stacked li a {
+    width: 100%;
+    height: 45px;
+    display: block;
+}
+
+.leftNav {
+    background-color: #31708f;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    left: 5px;
+    width: inherit;
+}
+
+.well-sm {
+    background-color: rgba(189, 196, 233, 0.95);
+    color: rgba(47, 30, 5, 0.95);
+    margin-bottom: 10px;
+}
+
+.adContainer img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.allAds {
+
+
+}
+.rightNav{
+    position: fixed;
+    right: 5px;
 }

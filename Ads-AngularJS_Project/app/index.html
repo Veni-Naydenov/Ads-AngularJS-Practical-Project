@@ -9,10 +9,11 @@
 </head>
 <body data-ng-app="adsApp">
 
-<div class="navbar navbar-default navbar-fixed-top">
+
+<div class=" navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a href="../" class="navbar-brand">Home</a>
+            <a href="#/home" class="navbar-brand">Home</a>
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-main"
                     aria-expanded="false">
                 <span class="icon-bar"></span>
@@ -32,23 +33,37 @@
         </div>
     </div>
 </div>
-
-
 <div class="container">
-    <!--<div class="row">
+
+    <div class=" row">
+
         <div class="col-md-2">
-            <h3>Nav</h3>
+            <div class="well leftNav">
+                <h3 class=""><u>Navigation</u></h3>
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="#/home" class="navbar-brand">Home</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div ng-view>
+        </div>
+
+        <div class="col-md-2 well  rightNav">
+            <h3 class=""><u>Navigation</u></h3>
             <ul class="nav nav-pills nav-stacked">
-                ...
+                <li>
+                    <a href="#/home" class="navbar-brand">Home</a>
+                </li>
             </ul>
         </div>
-    </div>-->
-
-    <div ng-view>
     </div>
 
 </div>
-
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.js"></script>
