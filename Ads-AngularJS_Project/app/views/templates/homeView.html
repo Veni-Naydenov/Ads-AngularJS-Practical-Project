@@ -2,7 +2,7 @@
 
     <h3>User ads</h3>
 
-    <div ng-repeat="ad in data.ads | filter: {'categoryId':categoryId}"
+    <div ng-repeat="ad in data.ads | filter: {'categoryId':categoryId}:true"
          class="well row adContainer">
 
         <a href="#/ads/{{ad.id}}/{{ad.categoryId}}">
