@@ -15,7 +15,10 @@
                 </div>
             </div>
 
-            <img src="" class="img-thumbnail col-md-5" ng-src="{{ad.imageDataUrl}}">
+            <img src="" class="img-thumbnail col-md-5"
+                 ng-src="{{ad.imageDataUrl}}" ng-if="ad.imageDataUrl" >
+            <img src="" class="img-thumbnail col-md-5"
+                 ng-src="../../images/No_image.png" ng-if="!ad.imageDataUrl" >
 
             <div class="well col-md-7">
                 <div class="well-sm "><strong>Text:</strong> {{ad.text}}</div>
