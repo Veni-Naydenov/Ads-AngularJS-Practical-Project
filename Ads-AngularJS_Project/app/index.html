@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/theme/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/adsProject.css">
 </head>
-<body data-ng-app="adsApp">
+<body data-ng-app="adsApp" ng-controller="GlobalControler">
 
 
 <div class=" navbar navbar-default navbar-fixed-top">
@@ -62,7 +62,7 @@
                         <a href="#/home" class="navbar-brand">All</a>
                     </li>
                     <li ng-repeat="cat in categories">
-                        <a href="#/{{cat.id}}" class="navbar-brand">{{cat.name}}</a>
+                        <a href="#/{{cat.id}}" ng-click="filterById(cat.id)" class="navbar-brand">{{cat.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -98,6 +98,7 @@
 <script src="js/services/adsData.js"></script>
 <script src="js/services/categoryData.js"></script>
 <script src="js/services/townsData.js"></script>
+<script src="js/controllers/GlobalControler.js"></script>
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/CategoriesCntr.js"></script>
 <script src="js/controllers/TownController.js"></script>
