@@ -11,14 +11,14 @@
                     <p>{{ad.title}}</p>
                 </div>
                 <div class="col-md-4">
-                   <p> {{ad.date | date: 'd-MMM-yyyy'}}</p>
+                    <p> {{ad.date | date: 'd-MMM-yyyy'}}</p>
                 </div>
             </div>
 
             <img src="" class="img-thumbnail col-md-5"
-                 ng-src="{{ad.imageDataUrl}}" ng-if="ad.imageDataUrl" >
+                 ng-src="{{ad.imageDataUrl}}" ng-if="ad.imageDataUrl">
             <img src="" class="img-thumbnail col-md-5"
-                 ng-src="../../images/No_image.png" ng-if="!ad.imageDataUrl" >
+                 ng-src="../../images/No_image.png" ng-if="!ad.imageDataUrl">
 
             <div class="well col-md-7">
                 <div class="well-sm "><strong>Text:</strong> {{ad.text}}</div>
@@ -28,6 +28,36 @@
             </div>
 
         </a>
+    </div>
+</div>
+
+<div class="col-md-2  rightNav">
+    <div class="row" ng-controller="CategoriesCntr">
+        <div class="col-md-12 well">
+            <h3 class=""><u>Navigation</u></h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="#/home" ng-click="filterById()" class="navbar-brand">All</a>
+                </li>
+                <li ng-repeat="cat in categories">
+                    <a href="#/{{cat.id}}" ng-click="filterById(cat.id)" class="navbar-brand">{{cat.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" ng-controller="TownController">
+        <div class="col-md-12 well">
+
+            <h3 class=""><u>Towns</u></h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li>
+                    <a href="#/home" class="navbar-brand">All</a>
+                </li>
+                <li ng-repeat="town in towns">
+                    <a href="#/{{town.id}}" class="navbar-brand">{{town.name}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 

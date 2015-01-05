@@ -53,37 +53,6 @@
         <div ng-view>
         </div>
 
-        <div class="col-md-2  rightNav">
-        <div class="row" ng-controller="CategoriesCntr">
-            <div class="col-md-12 well">
-                <h3 class=""><u>Navigation</u></h3>
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="#/home" ng-click="filterById()"  class="navbar-brand">All</a>
-                    </li>
-                    <li ng-repeat="cat in categories">
-                        <a href="#/{{cat.id}}" ng-click="filterById(cat.id)" class="navbar-brand">{{cat.name}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="row" ng-controller="TownController">
-            <div class="col-md-12 well">
-
-                <h3 class=""><u>Towns</u></h3>
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        <a href="#/home" class="navbar-brand">All</a>
-                    </li>
-                    <li ng-repeat="town in towns">
-                        <a href="#/{{town.id}}" class="navbar-brand">{{town.name}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
-
 
     </div>
 </div>
