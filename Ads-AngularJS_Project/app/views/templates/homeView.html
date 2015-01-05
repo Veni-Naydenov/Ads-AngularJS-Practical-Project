@@ -4,7 +4,15 @@
 
     <div ng-repeat="ad in data.ads" class="well row adContainer">
         <a href="#/ads/{{ad.id}}">
-            <h3>{{ad.title}}</h3>
+            <div class="row">
+                <div class="col-md-8">
+                    <p>{{ad.title}}</p>
+                </div>
+                <div class="col-md-4">
+                   <p> {{ad.date | date: 'd-MMM-yyyy'}}</p>
+                </div>
+            </div>
+
             <img src="" class="img-thumbnail col-md-5" ng-src="{{ad.imageDataUrl}}">
 
             <div class="well col-md-7">
