@@ -13,7 +13,7 @@ var adsApp = angular
                 controller: ''
             })
             .when('/register', {
-               // templateUrl: 'views/templates/register.html',
+                templateUrl: 'views/templates/registrationView.html',
                 controller: ''
             })
 

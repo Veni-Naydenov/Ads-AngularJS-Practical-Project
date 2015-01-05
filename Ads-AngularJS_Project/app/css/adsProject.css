@@ -46,9 +46,25 @@ ul.nav-stacked li:hover a {
 
 .allAds {
 
-
 }
-.rightNav{
+
+.rightNav {
 
     right: 5px;
+}
+
+.jumbotron.regForm {
+    background-color: rgba(191, 248, 191, 0.95);
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    border: 2px solid rgba(53, 49, 236, 0.95);
+}
+
+.jumbotron.regForm legend{
+    border-bottom: 2px solid rgba(55, 55, 165, 0.95);
+    color:rgba(53, 49, 236, 0.95) ;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
 }
