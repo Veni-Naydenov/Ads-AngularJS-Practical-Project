@@ -68,3 +68,15 @@ ul.nav-stacked li:hover a {
     font-size: 1.6em;
     text-align: center;
 }
+
+.toast-top-full-width{
+    top: 75px;
+    right: 100px;
+    position: absolute;
+    background-color: rgba(48, 236, 181, 0.95);
+    color: #080808;
+    font-size: 25px;
+    width: 50%;
+    min-height: 50px;
+    text-align: center;
+}

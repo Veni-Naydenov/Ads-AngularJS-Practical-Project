@@ -1,7 +1,7 @@
 'use strict';
 
 var adsApp = angular
-    .module('adsApp', ['ngResource', 'ngRoute'])
+    .module('adsApp', ['ngResource', 'ngRoute','ngCookies'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {
@@ -20,3 +20,4 @@ var adsApp = angular
             .otherwise({redirectTo: '/home'});
     })
     .constant('baseServiceUrl',  'http://softuni-ads.azurewebsites.net/api/')
+    .value('toastr', toastr);
