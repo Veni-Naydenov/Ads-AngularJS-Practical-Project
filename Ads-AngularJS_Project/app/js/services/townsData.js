@@ -1,6 +1,6 @@
 adsApp.factory('townsData',
-    function ($http, $log) {
-        var townUrl = "http://softuni-ads.azurewebsites.net/api/towns";
+    function ($http, baseServiceUrl, $log) {
+        var townUrl = baseServiceUrl + 'towns';
 
         return {
             getTowns: function (success) {

@@ -1,6 +1,6 @@
 adsApp.factory('categoryData',
-    function ($http, $log) {
-        var categoryUrl = "http://softuni-ads.azurewebsites.net/api/categories";
+    function ($http, baseServiceUrl, $log) {
+        var categoryUrl = baseServiceUrl + 'categories';
 
         return {
             getCategories: function (success) {

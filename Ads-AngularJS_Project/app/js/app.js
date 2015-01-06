@@ -9,7 +9,7 @@ var adsApp = angular
                 controller: 'HomeController'
             })
             .when('/login', {
-               // templateUrl: 'views/templates/login.html',
+                // templateUrl: 'views/templates/login.html',
                 controller: ''
             })
             .when('/register', {
@@ -19,3 +19,4 @@ var adsApp = angular
 
             .otherwise({redirectTo: '/home'});
     })
+    .constant('baseServiceUrl',  'http://softuni-ads.azurewebsites.net/api/')
