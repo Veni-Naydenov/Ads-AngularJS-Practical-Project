@@ -1,8 +1,8 @@
 'use strict';
 
 adsApp.factory('authentication',
-    ['$http', '$q', 'baseServiceUrl',
-        function($http, $q, baseServiceUrl) {
+    ['$http', '$q', 'baseServiceUrl','userIdentity',
+        function($http, $q, baseServiceUrl,userIdentity) {
     var usersApi = baseServiceUrl + 'user/'
 
     return {
