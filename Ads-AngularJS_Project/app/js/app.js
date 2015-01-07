@@ -9,12 +9,12 @@ var adsApp = angular
                 controller: 'HomeController'
             })
             .when('/login', {
-                // templateUrl: 'views/templates/login.html',
-                controller: ''
+                templateUrl: 'views/templates/loginView.html',
+                controller: 'LoginController'
             })
             .when('/register', {
                 templateUrl: 'views/templates/registrationView.html',
-                controller: ''
+                controller: 'RegisterController'
             })
 
             .otherwise({redirectTo: '/home'});
