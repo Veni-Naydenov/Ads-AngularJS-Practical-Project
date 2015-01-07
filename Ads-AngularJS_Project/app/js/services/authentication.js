@@ -31,7 +31,8 @@ adsApp.factory('authentication',
                             else {
                                 deferred.resolve(false);
                             }
-                        });
+                        }
+                    );
 
                     return deferred.promise;
                 },

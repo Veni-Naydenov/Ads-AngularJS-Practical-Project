@@ -116,3 +116,11 @@ ul.nav-stacked li:hover a {
 float: right;
     margin-top: 10px;
 }
+
+input.ng-dirty.ng-invalid {
+    background-color: rgba(255, 81, 87, 0.88); !important
+}
+
+input.ng-dirty.ng-valid {
+    background-color: rgba(23, 255, 117, 0.55); !important
+}
