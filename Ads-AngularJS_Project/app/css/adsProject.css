@@ -89,11 +89,11 @@ ul.nav-stacked li:hover a {
 
 .menuTitle {
     display: inline-block;
-    width: 250px;
+    width: 450px;
     height: 40px;
     padding-top: 10px;
     margin-top: 10px;
-    margin-left: 20%;
+    margin-left: 10%;
     background-color: #597ea2;
     border-radius: 10px;
     font-size: 20px;
@@ -103,4 +103,14 @@ ul.nav-stacked li:hover a {
 
 #title {
     color: #f5ff80;
+}
+
+#logUser{
+    color: #ff1e45;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logoutBtn{
+
 }

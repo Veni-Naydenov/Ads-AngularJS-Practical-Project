@@ -1,9 +1,14 @@
 'use strict';
 
 adsApp.controller('LoginController',
-    ['$scope', '$location', 'authentication', 'notifier',
-        function LoginController($scope, $location, authentication, notifier) {
+    ['$scope', '$location', 'authentication', 'notifier','userIdentity',
+        function LoginController($scope, $location, authentication, notifier,userIdentity) {
             $scope.$emit('onMenuTitleChange', 'Login');
+            $scope.identity = userIdentity;
+
+            $scope.init = function () {
+                $scope.$emit('onMenuTitleChange','user: '+ userIdentity.getCurrentUser().username);
+            };
 
             $scope.login = function (user, loginForm) {
                 if (loginForm.$valid) {

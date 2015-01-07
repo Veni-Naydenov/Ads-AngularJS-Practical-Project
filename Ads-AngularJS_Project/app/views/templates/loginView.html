@@ -1,5 +1,6 @@
 <div class="jumbotron col-md-7 loginForm "  >
-    <form name="loginForm" class="form-horizontal">
+    <form name="loginForm"
+          class="form-horizontal" ng-hide="identity.isAuthenticated()">
         <fieldset>
             <legend>Login</legend>
 
@@ -39,4 +40,12 @@
 
         </fieldset>
     </form>
+    <div ng-show="identity.isAuthenticated()"  data-ng-init="init()" class="row">
+        <div class="col-md-9" ng-class="">Hi
+            <span id="logUser" >{{ identity.getCurrentUser().username }}</span> !
+        </div>
+        <div class="col-md-3">
+            <a href="#/home" id="logOut" class="btn btn-warning" ng-click="logout()">Logout</a>
+        </div>
+    </div>
 </div>

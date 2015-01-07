@@ -21,7 +21,7 @@ adsApp.factory('authentication',
                 login: function (user) {
                     var deferred = $q.defer();
 
-                    $http.post(usersApi + '/login',user)
+                    $http.post(usersApi + '/login', user)
                         .success(function (response) {
                             if (response['access_token']) {
                                 userIdentity.setCurrentUser(response);
@@ -36,7 +36,27 @@ adsApp.factory('authentication',
                     return deferred.promise;
                 },
                 logout: function () {
+                    var deferred = $q.defer();
 
+                    var headers = authorization.getAuthorizationHeader();
+                    $http.post(usersApi + '/logout')
+                        .success(function () {
+                            identity.setCurrentUser(undefined);
+                            authorization.removeAuthorizationHeader();
+                            deferred.resolve();
+                        });
+
+                    return deferred.promise;
+
+                },
+
+                isAuthenticated: function() {
+                    if (userIdentity.isAuthenticated()) {
+                        return true;
+                    }
+                    else {
+                        return $q.reject('not authorized');
+                    }
                 }
 
 
