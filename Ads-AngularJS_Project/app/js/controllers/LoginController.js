@@ -5,17 +5,21 @@ adsApp.controller('LoginController',
         function LoginController($scope, $location, authentication, notifier, userIdentity) {
             $scope.$emit('onMenuTitleChange', 'Login');
             $scope.identity = userIdentity;
+        var self=this;
 
-            $scope.init = function () {
-                $scope.$emit('onMenuTitleChange', 'user: ' + userIdentity.getCurrentUser().username);
-            };
+            if (userIdentity.getCurrentUser()) {
+                $scope.init = function () {
+                    $scope.$emit('onMenuTitleChange', 'user: ' + userIdentity.getCurrentUser().username);
+                    $scope.$emit('onLogedUser', userIdentity);
+                };
+            }
 
             $scope.login = function (user, loginForm) {
                 if (loginForm.$valid) {
                     authentication.login(user).then(function (success) {
                         if (success) {
                             notifier.success('Successful login!');
-                            $scope.$emit('onLogedUser', userIdentity);
+
                             $location.path('/');
                         }
                         else {
@@ -28,7 +32,7 @@ adsApp.controller('LoginController',
                 }
             }
 
-            $scope.logout = function () {
+            $scope.logout = function logout() {
                 authentication.logout()
                     .then(function () {
                         notifier.success('Successful logout!');
@@ -39,7 +43,6 @@ adsApp.controller('LoginController',
                             $scope.user.name = '';
                         }
 
-                        $scope.loginForm.$setPristine();
                         $location.path('/');
                     })
             }

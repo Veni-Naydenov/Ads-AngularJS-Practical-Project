@@ -32,8 +32,8 @@
             </ul>
             <span class="label label-info menuTitle">Ads - <span id="title" ng-cloak>{{menuTitle}}</span></span>
             <a href="#/home" class="btn btn-warning logoutBtn"
-               ng-click="logout()"
-               ng-if="isLogedIn">Logout</a>
+               ng-click="logout(loginForm)" ng-if="isLogedIn"
+               ng-controller="LoginController">Logout</a>
         </div>
 
     </div>

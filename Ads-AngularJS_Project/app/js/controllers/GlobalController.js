@@ -9,6 +9,7 @@ adsApp.controller('GlobalControler',
             $scope.isLogedIn = userIdentity.isAuthenticated();
         });
 
+
         $scope.filterById = function (id) {
             $scope.categoryId = id;
         }
