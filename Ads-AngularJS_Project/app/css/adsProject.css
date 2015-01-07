@@ -53,23 +53,26 @@ ul.nav-stacked li:hover a {
     right: 5px;
 }
 
-.jumbotron.regForm {
+.jumbotron.regForm, .jumbotron.loginForm {
     background-color: rgba(191, 248, 191, 0.95);
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
     border: 2px solid rgba(53, 49, 236, 0.95);
 }
+.jumbotron.loginForm{
+    background-color: #a1d5ff;
+}
 
-.jumbotron.regForm legend{
+.jumbotron.regForm legend, .jumbotron.loginForm legend {
     border-bottom: 2px solid rgba(55, 55, 165, 0.95);
-    color:rgba(53, 49, 236, 0.95) ;
+    color: rgba(53, 49, 236, 0.95);
     font-weight: bold;
     font-size: 1.6em;
     text-align: center;
 }
 
-.toast-top-full-width{
+.toast-top-full-width {
     top: 75px;
     right: 100px;
     position: absolute;
@@ -81,8 +84,8 @@ ul.nav-stacked li:hover a {
     text-align: center;
 }
 
-.menuTitle{
-    display:inline-block;
+.menuTitle {
+    display: inline-block;
     width: 250px;
     height: 40px;
     padding-top: 10px;
@@ -95,6 +98,6 @@ ul.nav-stacked li:hover a {
 
 }
 
-#title{
+#title {
     color: #f5ff80;
 }
