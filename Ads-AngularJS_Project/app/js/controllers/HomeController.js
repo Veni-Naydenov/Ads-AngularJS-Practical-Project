@@ -2,6 +2,8 @@
 
 adsApp.controller('HomeController',
     function HomeController($scope, adsData, $log) {
+        $scope.$emit('onMenuTitleChange', 'Home');
+
 
         adsData.getAll()
             .$promise

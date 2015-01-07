@@ -80,3 +80,21 @@ ul.nav-stacked li:hover a {
     min-height: 50px;
     text-align: center;
 }
+
+.menuTitle{
+    display:inline-block;
+    width: 250px;
+    height: 40px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-left: 20%;
+    background-color: #597ea2;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid #f5ff80;
+
+}
+
+#title{
+    color: #f5ff80;
+}
