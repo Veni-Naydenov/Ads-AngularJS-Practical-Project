@@ -1,9 +1,8 @@
 'use strict';
 
 adsApp.controller('HomeController',
-    function HomeController($scope, adsData, $log) {
+    function HomeController($scope, adsData, $log,notifier) {
         $scope.$emit('onMenuTitleChange', 'Home');
-
 
         adsData.getAll()
             .$promise
