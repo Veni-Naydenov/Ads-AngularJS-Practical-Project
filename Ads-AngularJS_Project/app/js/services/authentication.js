@@ -39,7 +39,7 @@ adsApp.factory('authentication',
                     var deferred = $q.defer();
 
                     var headers = authorization.getAuthorizationHeader();
-                    $http.post(usersApi + '/logout')
+                    $http.post(usersApi + '/logout', {}, {headers: headers})
                         .success(function () {
                             identity.setCurrentUser(undefined);
                             authorization.removeAuthorizationHeader();

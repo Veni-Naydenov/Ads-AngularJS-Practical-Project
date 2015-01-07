@@ -5,6 +5,9 @@ adsApp.controller('GlobalControler',
         $scope.$on('onMenuTitleChange', function (e, value) {
             $scope.menuTitle = value;
         });
+        $scope.$on('onLogedUser', function (e, userIdentity) {
+            $scope.isLogedIn = userIdentity.isAuthenticated();
+        });
 
         $scope.filterById = function (id) {
             $scope.categoryId = id;

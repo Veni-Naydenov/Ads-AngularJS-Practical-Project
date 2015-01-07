@@ -4,6 +4,7 @@ adsApp.controller('LoginController',
     ['$scope', '$location', 'authentication', 'notifier','userIdentity',
         function LoginController($scope, $location, authentication, notifier,userIdentity) {
             $scope.$emit('onMenuTitleChange', 'Login');
+            $scope.$emit('onLogedUser', userIdentity);
             $scope.identity = userIdentity;
 
             $scope.init = function () {

@@ -112,5 +112,6 @@ ul.nav-stacked li:hover a {
 }
 
 .logoutBtn{
-
+float: right;
+    margin-top: 10px;
 }
