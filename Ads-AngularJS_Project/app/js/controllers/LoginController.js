@@ -1,14 +1,13 @@
 'use strict';
 
 adsApp.controller('LoginController',
-    ['$scope', '$location', 'authentication', 'notifier','userIdentity',
-        function LoginController($scope, $location, authentication, notifier,userIdentity) {
+    ['$scope', '$location', 'authentication', 'notifier', 'userIdentity',
+        function LoginController($scope, $location, authentication, notifier, userIdentity) {
             $scope.$emit('onMenuTitleChange', 'Login');
-            $scope.$emit('onLogedUser', userIdentity);
             $scope.identity = userIdentity;
 
             $scope.init = function () {
-                $scope.$emit('onMenuTitleChange','user: '+ userIdentity.getCurrentUser().username);
+                $scope.$emit('onMenuTitleChange', 'user: ' + userIdentity.getCurrentUser().username);
             };
 
             $scope.login = function (user, loginForm) {
@@ -16,6 +15,7 @@ adsApp.controller('LoginController',
                     authentication.login(user).then(function (success) {
                         if (success) {
                             notifier.success('Successful login!');
+                            $scope.$emit('onLogedUser', userIdentity);
                             $location.path('/');
                         }
                         else {
@@ -26,6 +26,22 @@ adsApp.controller('LoginController',
                 else {
                     notifier.error('Username and password are required!')
                 }
+            }
+
+            $scope.logout = function () {
+                authentication.logout()
+                    .then(function () {
+                        notifier.success('Successful logout!');
+                        if ($scope.user) {
+                            $scope.user.username = '';
+                            $scope.user.password = '';
+                            $scope.user.email = '';
+                            $scope.user.name = '';
+                        }
+
+                        $scope.loginForm.$setPristine();
+                        $location.path('/');
+                    })
             }
 
         }]);
