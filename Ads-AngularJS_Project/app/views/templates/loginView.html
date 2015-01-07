@@ -1,4 +1,4 @@
-<div class="jumbotron col-md-7 loginForm " >
+<div class="jumbotron col-md-7 loginForm "  >
     <form name="loginForm" class="form-horizontal">
         <fieldset>
             <legend>Login</legend>
@@ -26,7 +26,7 @@
                 <div class="form-group">
                     <div class="col-md-5">
                         <a href="#/" class="btn btn-default">Cancel</a>
-                        <button ng-click="login(user)"
+                        <button ng-click="login(user,loginForm)"
                                 ng-disabled="loginForm.$invalid || loginForm.$pristine"
                                 class="btn btn-primary">Login
                         </button>
