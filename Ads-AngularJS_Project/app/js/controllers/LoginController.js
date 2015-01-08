@@ -8,25 +8,30 @@ adsApp.controller('LoginController',
 
             if (userIdentity.getCurrentUser()) {
                 $scope.init = function () {
-                    $scope.$emit('onMenuTitleChange', 'user: ' + userIdentity.getCurrentUser().username);
-                   // $scope.$emit('onLogedUser', userIdentity);
+                    $scope.$emit('onMenuTitleChange', ' Logged: ' + userIdentity.getCurrentUser().username);
                 };
+
+                $scope.$emit('onLogin', userIdentity.getCurrentUser().username);
+            }
+
+            function emitData() {
+                if (userIdentity.getCurrentUser()) {
+                    $scope.$emit('onLogin', userIdentity.getCurrentUser().username);
+                }
             }
 
             $scope.login = function (user) {
-
                 authentication.login(user)
                     .then(function (success) {
                         if (success) {
                             notifier.success('Successful login!');
 
+                            emitData();
                             $location.path('/');
-                        }
-                        else {
+                        } else {
                             notifier.error('Invalid login! Try again.');
                         }
                     });
-
             }
 
             $scope.logout = function logout() {
@@ -40,6 +45,7 @@ adsApp.controller('LoginController',
                             $scope.user.name = '';
                         }
 
+                        $scope.$emit('onLogin', undefined);
                         $location.path('/');
                     })
             }

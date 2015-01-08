@@ -2,6 +2,7 @@ body {
     padding-top: 70px;
     background-color: #ccdaff;
 }
+
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;
 }
@@ -63,7 +64,8 @@ ul.nav-stacked li:hover a {
     border-radius: 50px;
     border: 2px solid rgba(53, 49, 236, 0.95);
 }
-.jumbotron.loginForm{
+
+.jumbotron.loginForm {
     background-color: #a1d5ff;
 }
 
@@ -106,21 +108,37 @@ ul.nav-stacked li:hover a {
     color: #f5ff80;
 }
 
-#logUser{
-    color: #ff1e45;
+#logUser {
+    color: #04068d;
     font-size: 20px;
-    font-weight: bold;
 }
 
-.logoutBtn{
-float: right;
-    margin-top: 10px;
+.logoutBtn {
+    float: right;
+    margin-top: 15px;
 }
 
 input.ng-dirty.ng-invalid {
-    background-color: rgba(255, 81, 87, 0.88); !important
+    background-color: rgba(255, 81, 87, 0.88);
+!important
 }
 
 input.ng-dirty.ng-valid {
-    background-color: rgba(23, 255, 117, 0.55); !important
+    background-color: rgba(23, 255, 117, 0.55);
+!important
+}
+
+#username {
+    float: right;
+    display: inline-block;
+    height: 35px;
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 15px;
+    background-color: transparent;
+
+}
+
+#username a {
+    color: #caffad;
 }
