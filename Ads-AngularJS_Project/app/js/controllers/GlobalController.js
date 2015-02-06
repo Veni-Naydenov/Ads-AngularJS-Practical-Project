@@ -1,20 +1,28 @@
-'use strict';
+(function () {
+    'use strict';
 
-adsApp.controller('GlobalControler', ['$scope', 'userIdentity',
+    adsApp.controller('GlobalControler', GlobalControler);
     function GlobalControler($scope, userIdentity) {
+        GlobalControler.$inject = ['$scope', 'userIdentity'];
+
         $scope.$on('onMenuTitleChange', function (e, value) {
             $scope.menuTitle = value;
         });
 
         $scope.$on('onLogin', function (e, username) {
             $scope.username = username;
+            if (username) {
+                $scope.isLoged = true;
+            } else {
+                $scope.isLoged = false;
+            }
         });
 
-
-
-        $scope.filterById = function (id) {
-            $scope.categoryId = id;
+        if (userIdentity.getCurrentUser()) {
+            $scope.username = userIdentity.getCurrentUser().username;
+            $scope.isLoged = true;
         }
 
 
-    }]);
+    };
+})();

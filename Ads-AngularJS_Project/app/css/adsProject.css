@@ -77,18 +77,15 @@ ul.nav-stacked li:hover a {
     text-align: center;
 }
 
-.toast-top-full-width {
+/*.toast-top-center {
     top: 70px;
     right: 300px;
     position: absolute;
-    background-color: rgba(48, 236, 181, 0.95);
-    color: #080808;
     font-size: 20px;
     width: 55%;
     min-height: 50px;
     text-align: center;
-    border: 3px solid #fcff58;
-}
+}*/
 
 .menuTitle {
     display: inline-block;
@@ -141,4 +138,8 @@ input.ng-dirty.ng-valid {
 
 #username a {
     color: #caffad;
+}
+
+#loadingImage {
+    margin-left: 40%;
 }

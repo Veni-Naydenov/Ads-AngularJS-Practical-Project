@@ -5,15 +5,15 @@ var adsApp = angular
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {
-                templateUrl: 'views/templates/homeView.html',
-                controller: 'HomeController'
+                templateUrl: '../templates/homeView.html',
+                //controller: 'HomeController'
             })
             .when('/login', {
-                templateUrl: 'views/templates/loginView.html',
+                templateUrl: '../templates/loginView.html',
                 controller: 'LoginController'
             })
             .when('/register', {
-                templateUrl: 'views/templates/registrationView.html',
+                templateUrl: '../templates/registrationView.html',
                 controller: 'RegisterController'
             })
 

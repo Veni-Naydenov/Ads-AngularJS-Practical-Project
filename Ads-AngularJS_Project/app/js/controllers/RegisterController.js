@@ -1,8 +1,10 @@
-'use strict';
+(function () {
+    'use strict';
 
-adsApp.controller('RegisterController',
-    ['$scope', '$location', 'authentication','townsData','notifier',
-    function RegisterController($scope, $location, authentication,townsData,notifier) {
+    adsApp.controller('RegisterController', RegisterController);
+    function RegisterController($scope, $location, authentication, townsData, notifier) {
+        RegisterController.$inject = ['$scope', '$location', 'authentication', 'townsData', 'notifier'];
+
         $scope.$emit('onMenuTitleChange', 'Registration');
 
         townsData.getTowns(function (response) {
@@ -13,6 +15,13 @@ adsApp.controller('RegisterController',
             authentication.register(user).then(function () {
                 notifier.success('Registration successful!Please login.');
                 $location.path('/');
+            }, function (response) {
+                var errors = response['modelState'][''];
+                errors.forEach(function (error) {
+                    notifier.error(error);
+                });
             })
         }
-    }]);
+    };
+})();
+

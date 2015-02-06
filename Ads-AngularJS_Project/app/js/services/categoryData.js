@@ -1,5 +1,10 @@
-adsApp.factory('categoryData',
-    function ($http, baseServiceUrl, $log) {
+(function () {
+    'use strict';
+
+    adsApp.factory('categoryData', categoryData);
+    function categoryData($http, baseServiceUrl, $log) {
+        categoryData.$inject = ['$http', 'baseServiceUrl', '$log'];
+
         var categoryUrl = baseServiceUrl + 'categories';
 
         return {
@@ -13,4 +18,5 @@ adsApp.factory('categoryData',
                     });
             }
         }
-    });
+    };
+})();

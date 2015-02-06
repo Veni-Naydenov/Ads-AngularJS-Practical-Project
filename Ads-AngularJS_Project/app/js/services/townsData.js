@@ -1,5 +1,10 @@
-adsApp.factory('townsData',
-    function ($http, baseServiceUrl, $log) {
+(function () {
+    'use strict';
+
+    adsApp.factory('townsData', townsData);
+    function townsData($http, baseServiceUrl, $log) {
+        townsData.$inject = ['$http', 'baseServiceUrl', '$log'];
+
         var townUrl = baseServiceUrl + 'towns';
 
         return {
@@ -13,4 +18,5 @@ adsApp.factory('townsData',
                     });
             }
         }
-    });
+    };
+})();

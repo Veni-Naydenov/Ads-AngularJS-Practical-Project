@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-12 well">
+        <h3 class=""><u>Categories</u></h3>
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="#/home" ng-click="getAllAds(undefined)" class="navbar-brand">All</a>
+            </li>
+            <li ng-repeat="cat in categories">
+                <a href="#/{{cat.id}}" ng-click="filterByCategory(cat.id)" class="navbar-brand">{{cat.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

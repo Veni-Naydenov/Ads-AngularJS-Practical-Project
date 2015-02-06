@@ -1,30 +1,36 @@
-'use strict';
+(function () {
+    'use strict';
 
-adsApp.factory('userIdentity', ['$cookieStore', function($cookieStore) {
-    var cookieStorageUserKey = 'currentApplicationUser';
+    adsApp.factory('userIdentity', userIdentity);
+    function userIdentity($cookieStore) {
+        userIdentity.$inject = ['$cookieStore'];
 
-    var currentUser;
-    return {
-        getCurrentUser: function() {
-            var savedUser = $cookieStore.get(cookieStorageUserKey);
-            if (savedUser) {
-                return savedUser;
+        var cookieStorageUserKey = 'currentApplicationUser';
+
+        var currentUser;
+
+        return {
+            getCurrentUser: function () {
+                var savedUser = $cookieStore.get(cookieStorageUserKey);
+                if (savedUser) {
+                    return savedUser;
+                }
+
+                return currentUser;
+            },
+            setCurrentUser: function (user) {
+                if (user) {
+                    $cookieStore.put(cookieStorageUserKey, user);
+                }
+                else {
+                    $cookieStore.remove(cookieStorageUserKey);
+                }
+
+                currentUser = user;
+            },
+            isAuthenticated: function () {
+                return !!this.getCurrentUser();
             }
-
-            return currentUser;
-        },
-        setCurrentUser: function(user) {
-            if (user) {
-                $cookieStore.put(cookieStorageUserKey, user);
-            }
-            else {
-                $cookieStore.remove(cookieStorageUserKey);
-            }
-
-            currentUser = user;
-        },
-        isAuthenticated: function() {
-            return !!this.getCurrentUser();
         }
-    }
-}]);
+    };
+})();

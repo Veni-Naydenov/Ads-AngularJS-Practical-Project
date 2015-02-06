@@ -5,6 +5,7 @@
     <title>Ads</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/theme/bootstrap.css">
+    <link href="lib/toastr/toastr.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="css/adsProject.css">
 </head>
 <body data-ng-app="adsApp" ng-controller="GlobalControler">
@@ -22,7 +23,7 @@
             </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-hide="isLoged">
                 <li>
                     <a href="#/login">Login</a>
                 </li>
@@ -65,12 +66,15 @@
         </div>
 
 
+
     </div>
 </div>
 
 </div>
 <script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/angular/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js">        </script>
+
+<!--<script src="lib/angular/angular.js"></script>-->
 <script src="lib/angular/angular-route.js"></script>
 <script src="lib/angular/angular-resource.js"></script>
 <script src="lib/angular/angular-cookies.js"></script>
@@ -84,12 +88,16 @@
 <script src="js/services/userIdentity.js"></script>
 <script src="js/services/authorization.js"></script>
 <script src="js/services/notifier.js"></script>
+<script src="js/services/filterCategoryTown.js"></script>
 <script src="js/controllers/GlobalController.js"></script>
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/CategoriesCntr.js"></script>
 <script src="js/controllers/TownController.js"></script>
 <script src="js/controllers/RegisterController.js"></script>
 <script src="js/controllers/LoginController.js"></script>
+<script src="js/directives/adsHomeDirective.js"></script>
+<script src="js/directives/townsDirective.js"></script>
+<script src="js/directives/categoryDirective.js"></script>
 
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 
