@@ -10,52 +10,22 @@
 
         var params = filterCategoryTown.getFilterParams();
 
-        function getAds(params) {
-            $log.info(params);
 
-            adsData.getAll(params)
-                .$promise
-                .then(function (data) {
-                    $scope.data = data;
-                    $scope.loaded = true;
-                }, function (error) {
-                    $log.error(error);
-                })
-        };
-        getAds(params);
+        $log.info(params);
 
-        $scope.selectedCategoryIndex =-1;
-        $scope.selectedTownIndex =-1;
+        adsData.getAll(params)
+            .$promise
+            .then(function (data) {
+                $scope.data = data;
+                $scope.loaded = true;
+                $scope.noAds = false;
 
-        $scope.filterByCategory = function (id, $index) {
-            if (id === 'all') {
-                var params = filterCategoryTown.getFilterParams();
-                var id = params.categoryid;
-                filterCategoryTown.filterByCategory(id);
-                if (id) {
-                    getAds(params);
+                if (data['ads'].length === 0) {
+                    $scope.noAds = true;
                 }
-            } else {
-                filterCategoryTown.filterByCategory(id);
-            }
-
-            $scope.selectedCategoryIndex=$index;
-        }
-
-        $scope.filterByTown = function (id,$index) {
-            if (id === 'all') {
-                var params = filterCategoryTown.getFilterParams();
-                var id = params.townid;
-                filterCategoryTown.filterByTown(id);
-                if (id) {
-                    getAds(params);
-                }
-            } else {
-                filterCategoryTown.filterByTown(id);
-            }
-
-            $scope.selectedTownIndex=$index;
-        }
+            }, function (error) {
+                $log.error(error);
+            })
 
     };
 })();

@@ -4,11 +4,13 @@
         <h3 class=""><u>Towns</u></h3>
         <ul class="nav nav-pills nav-stacked">
             <li>
-                <a href="#/home" ng-click="filterByTown('all')" class="navbar-brand">All</a>
+                <a href="#" ng-click="filterByTown('all',-1)"
+                   ng-class="{'selected': -1==selectedIndex}"
+                   class="navbar-brand">All</a>
             </li>
             <li ng-repeat="town in towns">
                 <a href="#/{{town.id}}" class="navbar-brand"
-                   ng-class="{'selected': $index==selectedTownIndex}"
+                   ng-class="{'selected': $index==selectedIndex}"
                    ng-click="filterByTown(town.id,$index)">{{town.name}}</a>
             </li>
         </ul>

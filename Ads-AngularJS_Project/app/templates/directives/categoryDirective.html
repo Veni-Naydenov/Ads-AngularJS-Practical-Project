@@ -3,11 +3,13 @@
         <h3 class=""><u>Categories</u></h3>
         <ul class="nav nav-pills nav-stacked">
             <li>
-                <a href="#/home" ng-click="filterByCategory('all')" class="navbar-brand">All</a>
+                <a href="#" ng-click="filterByCategory('all',-1)"
+                   ng-class="{'selected': -1==selectedIndex}"
+                   class="navbar-brand">All</a>
             </li>
             <li ng-repeat="cat in categories">
-                <a href="#/{{cat.id}}"  ng-click="filterByCategory(cat.id,$index)"
-                   ng-class="{'selected': $index==selectedCategoryIndex}"
+                <a href="#/{{cat.id}}" ng-click="filterByCategory(cat.id,$index)"
+                   ng-class="{'selected': $index==selectedIndex}"
                    class="navbar-brand">{{cat.name}}</a>
             </li>
         </ul>

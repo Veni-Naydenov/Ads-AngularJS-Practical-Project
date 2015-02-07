@@ -1,5 +1,8 @@
-<div class=allAds" >
+<div class=allAds">
     <img src="" id="loadingImage" ng-src="../../images/loading.gif" ng-hide="loaded">
+
+    <div ng-show="noAds" id="noAds">No Ads available yet!</div>
+
     <div ng-repeat="ad in data.ads "
          class="well row adContainer">
 

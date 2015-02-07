@@ -1,36 +1,3 @@
-<!--<div class="col-md-8 jumbotron allAds" data-ng-controller="HomeController" >
-
-    <img src="" ng-src="../../images/loading.gif" ng-hide="loaded">
-
-    <div ng-repeat="ad in data.ads | filter: {'categoryId':categoryId}:true"
-         class="well row adContainer">
-
-        <a href="#/ads/{{ad.id}}/{{ad.categoryId}}">
-            <div class="row">
-                <div class="col-md-8">
-                    <p>{{ad.title}}</p>
-                </div>
-                <div class="col-md-4">
-                    <p> {{ad.date | date: 'd-MMM-yyyy'}}</p>
-                </div>
-            </div>
-
-            <img src="" class="img-thumbnail col-md-5"
-                 ng-src="{{ad.imageDataUrl}}" ng-if="ad.imageDataUrl">
-            <img src="" class="img-thumbnail col-md-5"
-                 ng-src="../../images/No_image.png" ng-if="!ad.imageDataUrl">
-
-            <div class="well col-md-7">
-                <div class="well-sm "><strong>Text:</strong> {{ad.text}}</div>
-                <div class=" well-sm"><strong>Name:</strong> {{ad.ownerName}}</div>
-                <div class="well-sm"><strong>Email:</strong> {{ad.ownerEmail}}</div>
-                <div class="well-sm"><strong>Tel.</strong> {{ad.ownerPhone}}</div>
-            </div>
-
-        </a>
-    </div>
-</div>-->
-
 <div class="col-md-8 jumbotron ">
     <div ads-home-directive></div>
 </div>
