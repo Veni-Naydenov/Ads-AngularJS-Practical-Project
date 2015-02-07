@@ -6,12 +6,20 @@
         var params = {};
 
         function filterByTown(townId) {
-            params.townid = townId;
+            if (params.townid && params.townid === townId) {
+                delete params.townid;
+            } else {
+                params.townid = townId;
+            }
+
         }
 
         function filterByCategory(categoryId) {
-
-            params.categoryid = categoryId;
+            if (params.categoryid && params.categoryid === categoryId) {
+                delete params.categoryid;
+            } else {
+                params.categoryid = categoryId;
+            }
         }
 
         function getFilterParams() {
@@ -26,7 +34,7 @@
             filterByTown: filterByTown,
             filterByCategory: filterByCategory,
             getFilterParams: getFilterParams,
-            noFilter: noFilter
+            noFilter: noFilter,
         }
     };
 })();

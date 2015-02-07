@@ -15,12 +15,12 @@
                 }
             });
 
-        function getFilteredAds(params) {
+       /* function getFilteredAds(params) {
             return resource.get(params);
-        }
+        }*/
 
-        function getAllAds() {
-            return resource.get();
+        function getAllAds(params) {
+            return resource.get(params);
         }
 
         /*function getAdsByCategoryAndTown(id) {
@@ -45,7 +45,7 @@
 
         return {
             getAll: getAllAds,
-            getFilteredAds: getFilteredAds,
+            //getFilteredAds: getFilteredAds,
             create: createNewAd,
             getById: getAdById,
             edit: editAd,

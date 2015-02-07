@@ -5,7 +5,7 @@ var adsApp = angular
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {
-                templateUrl: '../templates/homeView.html',
+                templateUrl: '../templates/homeView.html'
                 //controller: 'HomeController'
             })
             .when('/login', {

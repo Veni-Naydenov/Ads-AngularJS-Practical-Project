@@ -7,6 +7,7 @@
 
         $scope.$on('onMenuTitleChange', function (e, value) {
             $scope.menuTitle = value;
+            $scope.isHome= value==='Home';
         });
 
         $scope.$on('onLogin', function (e, username) {
@@ -22,6 +23,8 @@
             $scope.username = userIdentity.getCurrentUser().username;
             $scope.isLoged = true;
         }
+
+
 
 
     };

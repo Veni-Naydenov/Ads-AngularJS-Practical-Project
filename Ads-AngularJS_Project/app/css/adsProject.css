@@ -143,3 +143,10 @@ input.ng-dirty.ng-valid {
 #loadingImage {
     margin-left: 40%;
 }
+
+.selected{
+    background-color: gold;
+    border: 4px solid  deepskyblue;
+    color: #000000;
+    font-weight: bold;
+}
