@@ -7,7 +7,7 @@
         adsData.$inject = ['$resource', '$http', 'baseServiceUrl'];
 
         var resource = $resource(
-            baseServiceUrl + 'ads?pagesize=10&startpage=1',     //'http://softuni-ads.azurewebsites.net/api/ads/:id',
+            baseServiceUrl + 'ads?',     //'http://softuni-ads.azurewebsites.net/api/ads/:id',
             {id: '@id'},
             {
                 update: {
@@ -15,17 +15,10 @@
                 }
             });
 
-       /* function getFilteredAds(params) {
-            return resource.get(params);
-        }*/
 
-        function getAllAds(params) {
-            return resource.get(params);
+        function getAllAds(pageParams,params) {
+            return resource.get(pageParams,params);
         }
-
-        /*function getAdsByCategoryAndTown(id) {
-         return resource.get({id: id});
-         }*/
 
         function createNewAd(ad) {
             return resource.save(ad);

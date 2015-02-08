@@ -17,6 +17,9 @@
             if (params.categoryid === categoryId) {
                 delete params.categoryid;
             } else {
+                if (params.startpage!==1 ) {
+                    params.startpage=1;
+                }
                 params.categoryid = categoryId;
             }
         }

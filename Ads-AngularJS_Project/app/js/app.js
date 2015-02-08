@@ -1,7 +1,7 @@
 'use strict';
 
 var adsApp = angular
-    .module('adsApp', ['ngResource', 'ngRoute','ngCookies'])
+    .module('adsApp', ['ngResource', 'ngRoute','ngCookies','ui.bootstrap'])
     .config(function ($routeProvider) {
         $routeProvider
             .when('/home', {

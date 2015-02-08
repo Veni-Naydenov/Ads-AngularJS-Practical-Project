@@ -1,11 +1,14 @@
 <div class="col-md-8 jumbotron ">
-    <div ads-home-directive></div>
-</div>
-<!--<div class="col-md-2  rightNav">
-    <div category-directive></div>
+    <pagination  boundary-links="true" total-items="page.totalItems" items-per-page="page.itemsPerPage"
+                ng-model="page.currentPage" ng-change="pageChanged()" ng-hide="noAds"></pagination>
 
-    <div towns-directive></div>
-</div>-->
+    <div ads-home-directive></div>
+
+    <pagination  boundary-links="true" total-items="page.totalItems" items-per-page="page.itemsPerPage"
+                 ng-model="page.currentPage" ng-change="pageChanged()" ng-hide="noAds"></pagination>
+</div>
+
+
 
 
 
